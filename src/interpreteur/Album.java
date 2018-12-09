@@ -27,4 +27,13 @@ public class Album extends Media implements Iterable<Media>{
     public Iterator<Media> iterator() {
         return this.als.iterator();
     }
+
+    public int getNombreDePhotos(){
+        int taille = 0;
+        for(int i = 0; i < als.size(); i++)
+        {
+            taille= taille+ als.get(i).getNombreDePhotos();
+        }
+        return taille;
+    }
 }

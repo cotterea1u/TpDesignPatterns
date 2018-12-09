@@ -10,4 +10,5 @@ public abstract class Media {
         this.nom = nom;
     }
 
+    public abstract int getNombreDePhotos();
 }

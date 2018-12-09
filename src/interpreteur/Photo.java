@@ -17,4 +17,8 @@ public class Photo extends Media {
                 ", nom='" + nom + '\'' +
                 '}';
     }
+
+    public int getNombreDePhotos(){
+        return 1;
+    }
 }
