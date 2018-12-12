@@ -1,9 +1,9 @@
 package visiteur;
 
-public class Photo extends Media {
+public class Article extends Media {
     protected String auteur;
     protected String nomFichier;
-    public Photo(int d, String nom, String auteur, String nomFichier) {
+    public Article(int d, String nom, String auteur, String nomFichier) {
         super(d, nom);
         this.auteur = auteur;
         this.nomFichier = nomFichier;

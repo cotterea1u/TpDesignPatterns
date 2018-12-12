@@ -3,16 +3,28 @@ package visiteur;
 
 public class VisitNbPhotos implements Visiteur {
 
-    Visiteur v;
-    @Override
-    public int see_Album(Album a) {
-        int total = 0;
+    int total;
 
-        return total;
+    @Override
+    public void visit(Album a) {
+        for (Media m : a.als){
+            m.accept(this);
+        }
     }
 
     @Override
-    public int see_Photo(Photo p) {
-        return 1;
+    public void visit(Photo p) {
+        total=total+1;
     }
+
+    @Override
+    public void visit(Video v) {
+    }
+
+    //Test pour la question 4
+    //public int get_tot(){
+    //    return total;
+
+    @Override
+    public void visit(Article a)
 }
