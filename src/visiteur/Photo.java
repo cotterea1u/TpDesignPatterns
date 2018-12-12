@@ -18,4 +18,7 @@ public class Photo extends Media {
                 '}';
     }
 
+    public Object accepte(Visiteur v){
+        return v.see_Photo(this);
+    }
 }
