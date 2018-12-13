@@ -1,7 +1,6 @@
 package visiteur;
 
-
-public class VisitNbPhotos implements Visiteur {
+public class VisitNbArticle implements Visiteur {
 
     int total;
 
@@ -14,20 +13,20 @@ public class VisitNbPhotos implements Visiteur {
 
     @Override
     public void visit(Photo p) {
-        total=total+1;
+
     }
 
     @Override
     public void visit(Video v) {
+
     }
 
     @Override
-    public void visit(Article a){
+    public void visit(Article a) {
+        total = total+1;
     }
 
-
-    //Test pour la question 4 et 6
-    public int get_tot() {
+    public int getTotal(){
         return total;
     }
 }

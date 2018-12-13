@@ -2,10 +2,10 @@ package interpreteur;
 
 import java.util.ArrayList;
 
-public class Photo extends Media {
+public class Video extends Media {
     protected String auteur;
     protected String nomFichier;
-    public Photo(int d, String nom, String auteur, String nomFichier) {
+    public Video(int d, String nom, String auteur, String nomFichier) {
         super(d, nom);
         this.auteur = auteur;
         this.nomFichier = nomFichier;
@@ -13,7 +13,7 @@ public class Photo extends Media {
 
     @Override
     public String toString() {
-        return "Photo{" +
+        return "Vidéo{" +
                 "auteur='" + auteur + '\'' +
                 ", annee=" + annee +
                 ", nom='" + nom + '\'' +
@@ -21,12 +21,12 @@ public class Photo extends Media {
     }
 
     public int getNombreDePhotos(){
-        return 1;
+        return 0;
     }
 
     @Override
     public int getNombreDeVideos() {
-        return 0;
+        return 1;
     }
 
     @Override
@@ -36,7 +36,10 @@ public class Photo extends Media {
 
     @Override
     public ArrayList<Video> getMP4() {
-        ArrayList<Video> video= new ArrayList<>();
+        ArrayList<Video> video=new ArrayList<>();
+        if(this.nomFichier.substring(this.nomFichier.length() - 4).equals(".mp4")){
+            video.add(this);
+        }
         return video;
     }
 

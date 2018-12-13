@@ -2,18 +2,18 @@ package interpreteur;
 
 import java.util.ArrayList;
 
-public class Photo extends Media {
+public class Article extends Media {
     protected String auteur;
-    protected String nomFichier;
-    public Photo(int d, String nom, String auteur, String nomFichier) {
+    protected String texte;
+    public Article(int d, String nom, String auteur, String texte) {
         super(d, nom);
         this.auteur = auteur;
-        this.nomFichier = nomFichier;
+        this.texte = texte;
     }
 
     @Override
     public String toString() {
-        return "Photo{" +
+        return "Article{" +
                 "auteur='" + auteur + '\'' +
                 ", annee=" + annee +
                 ", nom='" + nom + '\'' +
@@ -21,7 +21,7 @@ public class Photo extends Media {
     }
 
     public int getNombreDePhotos(){
-        return 1;
+        return 0;
     }
 
     @Override
@@ -31,7 +31,7 @@ public class Photo extends Media {
 
     @Override
     public int getNombreDArticle() {
-        return 0;
+        return 1;
     }
 
     @Override
@@ -43,6 +43,9 @@ public class Photo extends Media {
     @Override
     public ArrayList<Article> getTexte(String auteur) {
         ArrayList<Article> article= new ArrayList<>();
+        if(this.auteur==auteur){
+            article.add(this);
+        }
         return article;
     }
 }

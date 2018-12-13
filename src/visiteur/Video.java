@@ -11,7 +11,7 @@ public class Video extends Media {
 
     @Override
     public String toString() {
-        return "Photo{" +
+        return "Vidéo{" +
                 "auteur='" + auteur + '\'' +
                 ", annee=" + annee +
                 ", nom='" + nom + '\'' +

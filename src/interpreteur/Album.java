@@ -36,4 +36,42 @@ public class Album extends Media implements Iterable<Media>{
         }
         return taille;
     }
+
+    @Override
+    public int getNombreDeVideos() {
+        int taille = 0;
+        for(int i = 0; i < als.size(); i++)
+        {
+            taille= taille+ als.get(i).getNombreDeVideos();
+        }
+        return taille;
+    }
+
+    @Override
+    public int getNombreDArticle() {
+        int taille = 0;
+        for(int i = 0; i < als.size(); i++)
+        {
+            taille= taille+ als.get(i).getNombreDArticle();
+        }
+        return taille;
+    }
+
+    @Override
+    public ArrayList<Video> getMP4() {
+        ArrayList<Video> video= new ArrayList<>();
+        for(Media m : this.als){
+            video.addAll(m.getMP4());
+        }
+        return video;
+    }
+
+    @Override
+    public ArrayList<Article> getTexte(String auteur) {
+        ArrayList<Article> article= new ArrayList<>();
+        for(Media m : this.als){
+            article.addAll(m.getTexte("Moi"));
+        }
+        return article;
+    }
 }

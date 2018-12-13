@@ -2,16 +2,16 @@ package visiteur;
 
 public class Article extends Media {
     protected String auteur;
-    protected String nomFichier;
-    public Article(int d, String nom, String auteur, String nomFichier) {
+    protected String texte;
+    public Article(int d, String nom, String auteur, String texte) {
         super(d, nom);
         this.auteur = auteur;
-        this.nomFichier = nomFichier;
+        this.texte = texte;
     }
 
     @Override
     public String toString() {
-        return "Photo{" +
+        return "Article{" +
                 "auteur='" + auteur + '\'' +
                 ", annee=" + annee +
                 ", nom='" + nom + '\'' +
